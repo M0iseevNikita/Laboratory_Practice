@@ -1,0 +1,56 @@
+ARM GAS  /tmp/cc8SaWOr.s 			page 1
+
+
+   1              		.cpu cortex-m4
+   2              		.eabi_attribute 27, 1
+   3              		.eabi_attribute 28, 1
+   4              		.eabi_attribute 20, 1
+   5              		.eabi_attribute 21, 1
+   6              		.eabi_attribute 23, 3
+   7              		.eabi_attribute 24, 1
+   8              		.eabi_attribute 25, 1
+   9              		.eabi_attribute 26, 1
+  10              		.eabi_attribute 30, 1
+  11              		.eabi_attribute 34, 1
+  12              		.eabi_attribute 18, 4
+  13              		.file	"main.c"
+  14              		.text
+  15              	.Ltext0:
+  16              		.cfi_sections	.debug_frame
+  17              		.section	.text.main,"ax",%progbits
+  18              		.align	1
+  19              		.global	main
+  20              		.arch armv7e-m
+  21              		.syntax unified
+  22              		.thumb
+  23              		.thumb_func
+  24              		.fpu fpv4-sp-d16
+  26              	main:
+  27              	.LFB0:
+  28              		.file 1 "Core/Src/main.c"
+   1:Core/Src/main.c **** int main(void){
+  29              		.loc 1 1 15 view -0
+  30              		.cfi_startproc
+  31              		@ Volatile: function does not return.
+  32              		@ args = 0, pretend = 0, frame = 0
+  33              		@ frame_needed = 0, uses_anonymous_args = 0
+  34              		@ link register save eliminated.
+  35              	.L2:
+   2:Core/Src/main.c ****         while(1){}
+  36              		.loc 1 2 9 discriminator 1 view .LVU1
+  37              		.loc 1 2 18 discriminator 1 view .LVU2
+  38              		.loc 1 2 14 discriminator 1 view .LVU3
+  39 0000 FEE7     		b	.L2
+  40              		.cfi_endproc
+  41              	.LFE0:
+  43              		.text
+  44              	.Letext0:
+ARM GAS  /tmp/cc8SaWOr.s 			page 2
+
+
+DEFINED SYMBOLS
+                            *ABS*:0000000000000000 main.c
+     /tmp/cc8SaWOr.s:18     .text.main:0000000000000000 $t
+     /tmp/cc8SaWOr.s:26     .text.main:0000000000000000 main
+
+NO UNDEFINED SYMBOLS
