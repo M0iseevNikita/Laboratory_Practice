@@ -1,12 +1,16 @@
 #include <init.h>
 
 void GPIO_Ini(void){
-        RCC_GPIO_EN     |=      RCC_GPIOB_EN + RCC_GPIOC_EN;
-        GPIOB_MODER     |=      GPIOB_MODE_PIN7_OUT;
-        GPIOB_OTYPER    |=      GPIOB_OTYPE_PIN7_PP;
-        GPIOB_OSPEEDR   |=      GPIOB_OSPEED_PIN7_MID;
-        GPIOB_PUPDR     |=      GPIOB_PUPDR_PIN7_NOPUPD;      
-        
-        
-        
+        SET_BIT(RCC->AHB1ENR, RCC_AHB1ENR_GPIOBEN | RCC_AHB1ENR_GPIOCEN);
+
+        SET_BIT(GPIOB->MODER, GPIO_MODER_MODE7_0);
+        CLEAR_BIT(GPIOB->OTYPER, GPIO_OTYPER_OT_7);
+        SET_BIT(GPIOB->OSPEEDR, GPIO_OSPEEDER_OSPEEDR7_0);
+        CLEAR_BIT(GPIOB->PUPDR, GPIO_PUPDR_PUPDR7_0);
+
+        // RCC_GPIO_EN     |=      RCC_GPIOB_EN + RCC_GPIOC_EN;
+        // GPIOB_MODER     |=      GPIOB_MODE_PIN7_OUT;
+        // GPIOB_OTYPER    |=      GPIOB_OTYPE_PIN7_PP;
+        // GPIOB_OSPEEDR   |=      GPIOB_OSPEED_PIN7_MID;
+        // GPIOB_PUPDR     |=      GPIOB_PUPDR_PIN7_NOPUPD;
 }
