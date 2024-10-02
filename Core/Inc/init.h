@@ -1,8 +1,8 @@
-#include "/home/mns94/dmt/Laboratory_Practice/CMSIS/Devices/stm32f4xx.h"
-#include "/home/mns94/dmt/Laboratory_Practice/CMSIS/Devices/stm32f429xx.h"
+#include "/home/mns94/tpu/dmt/Laboratory_Practice/CMSIS/Devices/stm32f4xx.h"
+#include "/home/mns94/tpu/dmt/Laboratory_Practice/CMSIS/Devices/stm32f429xx.h"
 
 void GPIO_Ini(void);
-
+void GPIO_Ini_Self_Def(void);
 //#include <stdint.h>
 
 // #define RCC_GPIO_EN     (*(uint32_t*)(0x40023800UL + 0x30UL))
