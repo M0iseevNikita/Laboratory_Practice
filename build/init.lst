@@ -1,4 +1,4 @@
-ARM GAS  /tmp/ccvipZxm.s 			page 1
+ARM GAS  /tmp/ccz5dndb.s 			page 1
 
 
    1              		.cpu cortex-m4
@@ -58,7 +58,7 @@ ARM GAS  /tmp/ccvipZxm.s 			page 1
   52              		.thumb
   53              		.thumb_func
   55              	GPIO_Ini_Self_Def:
-ARM GAS  /tmp/ccvipZxm.s 			page 2
+ARM GAS  /tmp/ccz5dndb.s 			page 2
 
 
   56              	.LFB131:
@@ -69,51 +69,119 @@ ARM GAS  /tmp/ccvipZxm.s 			page 1
   59              		@ args = 0, pretend = 0, frame = 0
   60              		@ frame_needed = 0, uses_anonymous_args = 0
   61              		@ link register save eliminated.
-   8:Core/Src/init.c ****         SET_BIT(GPIOB->MODER, GPIO_MODER_MODE7_0);
-  62              		.loc 1 8 9 view .LVU4
-  63 0000 084B     		ldr	r3, .L5
-  64 0002 1A68     		ldr	r2, [r3]
-  65 0004 42F48042 		orr	r2, r2, #16384
-  66 0008 1A60     		str	r2, [r3]
-   9:Core/Src/init.c ****         CLEAR_BIT(GPIOB->OTYPER, GPIO_OTYPER_OT_7);
-  67              		.loc 1 9 9 view .LVU5
-  68 000a 5A68     		ldr	r2, [r3, #4]
-  69 000c 22F08002 		bic	r2, r2, #128
-  70 0010 5A60     		str	r2, [r3, #4]
-  10:Core/Src/init.c ****         SET_BIT(GPIOB->OSPEEDR, GPIO_OSPEEDER_OSPEEDR7_0);
-  71              		.loc 1 10 9 view .LVU6
-  72 0012 9A68     		ldr	r2, [r3, #8]
-  73 0014 42F48042 		orr	r2, r2, #16384
-  74 0018 9A60     		str	r2, [r3, #8]
-  11:Core/Src/init.c ****         CLEAR_BIT(GPIOB->PUPDR, GPIO_PUPDR_PUPDR7_0);
-  75              		.loc 1 11 9 view .LVU7
-  76 001a DA68     		ldr	r2, [r3, #12]
-  77 001c 22F48042 		bic	r2, r2, #16384
-  78 0020 DA60     		str	r2, [r3, #12]
-  12:Core/Src/init.c **** }...
-  79              		.loc 1 12 1 is_stmt 0 view .LVU8
-  80 0022 7047     		bx	lr
-  81              	.L6:
-  82              		.align	2
-  83              	.L5:
-  84 0024 00040240 		.word	1073873920
-  85              		.cfi_endproc
-  86              	.LFE131:
-  88              		.text
-  89              	.Letext0:
-  90              		.file 2 "/usr/arm-none-eabi/include/machine/_default_types.h"
-  91              		.file 3 "/usr/arm-none-eabi/include/sys/_stdint.h"
-  92              		.file 4 "/home/mns94/tpu/dmt/Laboratory_Practice/CMSIS/Devices/stm32f429xx.h"
-ARM GAS  /tmp/ccvipZxm.s 			page 3
+   8:Core/Src/init.c ****         
+   9:Core/Src/init.c **** }
+  62              		.loc 1 9 1 view .LVU4
+  63 0000 7047     		bx	lr
+  64              		.cfi_endproc
+  65              	.LFE131:
+  67              		.section	.text.GPIO_Ini_CMSIS,"ax",%progbits
+  68              		.align	1
+  69              		.global	GPIO_Ini_CMSIS
+  70              		.syntax unified
+  71              		.thumb
+  72              		.thumb_func
+  74              	GPIO_Ini_CMSIS:
+  75              	.LFB132:
+  10:Core/Src/init.c **** 
+  11:Core/Src/init.c **** void GPIO_Ini_CMSIS(void){
+  76              		.loc 1 11 26 view -0
+  77              		.cfi_startproc
+  78              		@ args = 0, pretend = 0, frame = 0
+  79              		@ frame_needed = 0, uses_anonymous_args = 0
+  80              		@ link register save eliminated.
+  12:Core/Src/init.c ****         SET_BIT(GPIOB->MODER, GPIO_MODER_MODE7_0);
+  81              		.loc 1 12 9 view .LVU6
+  82 0000 184B     		ldr	r3, .L6
+  83 0002 1A68     		ldr	r2, [r3]
+  84 0004 42F48042 		orr	r2, r2, #16384
+  85 0008 1A60     		str	r2, [r3]
+  13:Core/Src/init.c ****         CLEAR_BIT(GPIOB->OTYPER, GPIO_OTYPER_OT_7);
+  86              		.loc 1 13 9 view .LVU7
+  87 000a 5A68     		ldr	r2, [r3, #4]
+  88 000c 22F08002 		bic	r2, r2, #128
+  89 0010 5A60     		str	r2, [r3, #4]
+  14:Core/Src/init.c ****         SET_BIT(GPIOB->OSPEEDR, GPIO_OSPEEDER_OSPEEDR7_0);
+  90              		.loc 1 14 9 view .LVU8
+  91 0012 9A68     		ldr	r2, [r3, #8]
+  92 0014 42F48042 		orr	r2, r2, #16384
+  93 0018 9A60     		str	r2, [r3, #8]
+  15:Core/Src/init.c ****         CLEAR_BIT(GPIOB->PUPDR, GPIO_PUPDR_PUPDR7_0);
+  94              		.loc 1 15 9 view .LVU9
+  95 001a DA68     		ldr	r2, [r3, #12]
+  96 001c 22F48042 		bic	r2, r2, #16384
+  97 0020 DA60     		str	r2, [r3, #12]
+  16:Core/Src/init.c **** 
+  17:Core/Src/init.c ****         SET_BIT(GPIOB->MODER, GPIO_MODER_MODE14_0);
+  98              		.loc 1 17 9 view .LVU10
+  99 0022 1A68     		ldr	r2, [r3]
+ 100 0024 42F08052 		orr	r2, r2, #268435456
+ 101 0028 1A60     		str	r2, [r3]
+  18:Core/Src/init.c ****         CLEAR_BIT(GPIOB->OTYPER, GPIO_OTYPER_OT_14);
+ARM GAS  /tmp/ccz5dndb.s 			page 3
+
+
+ 102              		.loc 1 18 9 view .LVU11
+ 103 002a 5A68     		ldr	r2, [r3, #4]
+ 104 002c 22F48042 		bic	r2, r2, #16384
+ 105 0030 5A60     		str	r2, [r3, #4]
+  19:Core/Src/init.c ****         SET_BIT(GPIOB->OSPEEDR, GPIO_OSPEEDER_OSPEEDR14_0);
+ 106              		.loc 1 19 9 view .LVU12
+ 107 0032 9A68     		ldr	r2, [r3, #8]
+ 108 0034 42F08052 		orr	r2, r2, #268435456
+ 109 0038 9A60     		str	r2, [r3, #8]
+  20:Core/Src/init.c ****         CLEAR_BIT(GPIOB->PUPDR, GPIO_PUPDR_PUPDR7_0);
+ 110              		.loc 1 20 9 view .LVU13
+ 111 003a DA68     		ldr	r2, [r3, #12]
+ 112 003c 22F48042 		bic	r2, r2, #16384
+ 113 0040 DA60     		str	r2, [r3, #12]
+  21:Core/Src/init.c **** 
+  22:Core/Src/init.c ****         SET_BIT(GPIOB->MODER, GPIO_MODER_MODE0_0);
+ 114              		.loc 1 22 9 view .LVU14
+ 115 0042 1A68     		ldr	r2, [r3]
+ 116 0044 42F00102 		orr	r2, r2, #1
+ 117 0048 1A60     		str	r2, [r3]
+  23:Core/Src/init.c ****         CLEAR_BIT(GPIOB->OTYPER, GPIO_OTYPER_OT_0);
+ 118              		.loc 1 23 9 view .LVU15
+ 119 004a 5A68     		ldr	r2, [r3, #4]
+ 120 004c 22F00102 		bic	r2, r2, #1
+ 121 0050 5A60     		str	r2, [r3, #4]
+  24:Core/Src/init.c ****         SET_BIT(GPIOB->OSPEEDR, GPIO_OSPEEDER_OSPEEDR0_0);
+ 122              		.loc 1 24 9 view .LVU16
+ 123 0052 9A68     		ldr	r2, [r3, #8]
+ 124 0054 42F00102 		orr	r2, r2, #1
+ 125 0058 9A60     		str	r2, [r3, #8]
+  25:Core/Src/init.c ****         CLEAR_BIT(GPIOB->PUPDR, GPIO_PUPDR_PUPDR0_0);
+ 126              		.loc 1 25 9 view .LVU17
+ 127 005a DA68     		ldr	r2, [r3, #12]
+ 128 005c 22F00102 		bic	r2, r2, #1
+ 129 0060 DA60     		str	r2, [r3, #12]
+  26:Core/Src/init.c **** }...
+ 130              		.loc 1 26 1 is_stmt 0 view .LVU18
+ 131 0062 7047     		bx	lr
+ 132              	.L7:
+ 133              		.align	2
+ 134              	.L6:
+ 135 0064 00040240 		.word	1073873920
+ 136              		.cfi_endproc
+ 137              	.LFE132:
+ 139              		.text
+ 140              	.Letext0:
+ 141              		.file 2 "/usr/arm-none-eabi/include/machine/_default_types.h"
+ 142              		.file 3 "/usr/arm-none-eabi/include/sys/_stdint.h"
+ 143              		.file 4 "/home/mns94/tpu/dmt/Laboratory_Practice/CMSIS/Devices/stm32f429xx.h"
+ARM GAS  /tmp/ccz5dndb.s 			page 4
 
 
 DEFINED SYMBOLS
                             *ABS*:00000000 init.c
-     /tmp/ccvipZxm.s:21     .text.GPIO_Ini:00000000 $t
-     /tmp/ccvipZxm.s:27     .text.GPIO_Ini:00000000 GPIO_Ini
-     /tmp/ccvipZxm.s:44     .text.GPIO_Ini:0000000c $d
-     /tmp/ccvipZxm.s:49     .text.GPIO_Ini_Self_Def:00000000 $t
-     /tmp/ccvipZxm.s:55     .text.GPIO_Ini_Self_Def:00000000 GPIO_Ini_Self_Def
-     /tmp/ccvipZxm.s:84     .text.GPIO_Ini_Self_Def:00000024 $d
+     /tmp/ccz5dndb.s:21     .text.GPIO_Ini:00000000 $t
+     /tmp/ccz5dndb.s:27     .text.GPIO_Ini:00000000 GPIO_Ini
+     /tmp/ccz5dndb.s:44     .text.GPIO_Ini:0000000c $d
+     /tmp/ccz5dndb.s:49     .text.GPIO_Ini_Self_Def:00000000 $t
+     /tmp/ccz5dndb.s:55     .text.GPIO_Ini_Self_Def:00000000 GPIO_Ini_Self_Def
+     /tmp/ccz5dndb.s:68     .text.GPIO_Ini_CMSIS:00000000 $t
+     /tmp/ccz5dndb.s:74     .text.GPIO_Ini_CMSIS:00000000 GPIO_Ini_CMSIS
+     /tmp/ccz5dndb.s:135    .text.GPIO_Ini_CMSIS:00000064 $d
 
 NO UNDEFINED SYMBOLS

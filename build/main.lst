@@ -1,4 +1,4 @@
-ARM GAS  /tmp/ccauO9Pg.s 			page 1
+ARM GAS  /tmp/ccGgNVrk.s 			page 1
 
 
    1              		.cpu cortex-m4
@@ -43,82 +43,101 @@ ARM GAS  /tmp/ccauO9Pg.s 			page 1
   36              		.cfi_def_cfa_offset 8
   37              		.cfi_offset 3, -8
   38              		.cfi_offset 14, -4
-   6:Core/Src/main.c ****         // *(uint32_t*)(0x40023800UL + 0x30UL) |= 0x02;
-   7:Core/Src/main.c **** 
-   8:Core/Src/main.c ****         // *(uint32_t*)(0x40020400UL + 0x00UL) |= 0x4000;
-   9:Core/Src/main.c ****         // *(uint32_t*)(0x40020400UL + 0x08UL) |= 0x4000;
-  10:Core/Src/main.c ****         // *(uint32_t*)(0x40020400UL + 0x18UL) |= 0x800000;
-  11:Core/Src/main.c ****         
-  12:Core/Src/main.c **** 
-  13:Core/Src/main.c ****         // while(1){
-  14:Core/Src/main.c ****         //         *(uint32_t*)(0x40020400UL + 0x18UL) |= 0x80;
-  15:Core/Src/main.c ****         // }
-  16:Core/Src/main.c **** 
-  17:Core/Src/main.c ****         GPIO_Ini();
-  39              		.loc 1 17 9 view .LVU1
+   6:Core/Src/main.c ****         GPIO_Ini();
+  39              		.loc 1 6 9 view .LVU1
   40 0002 FFF7FEFF 		bl	GPIO_Ini
   41              	.LVL0:
-ARM GAS  /tmp/ccauO9Pg.s 			page 2
-
-
-  18:Core/Src/main.c ****         GPIO_Ini_Self_Def();
-  42              		.loc 1 18 9 view .LVU2
+   7:Core/Src/main.c ****         GPIO_Ini_Self_Def();
+  42              		.loc 1 7 9 view .LVU2
   43 0006 FFF7FEFF 		bl	GPIO_Ini_Self_Def
   44              	.LVL1:
-  45 000a 04E0     		b	.L2
-  46              	.L3:
-  19:Core/Src/main.c ****         while(1){
-  20:Core/Src/main.c ****                 if(READ_BIT(GPIOC->IDR, GPIO_IDR_IDR_13)!=0){
-  21:Core/Src/main.c ****                         SET_BIT(GPIOB->BSRR, GPIO_BSRR_BS7);
-  22:Core/Src/main.c ****                 }else{
-  23:Core/Src/main.c ****                         SET_BIT(GPIOB->BSRR, GPIO_BSRR_BR7);
-  47              		.loc 1 23 25 view .LVU3
-  48 000c 074A     		ldr	r2, .L6
-  49 000e 9369     		ldr	r3, [r2, #24]
-  50 0010 43F40003 		orr	r3, r3, #8388608
-  51 0014 9361     		str	r3, [r2, #24]
-  52              	.L2:
-  19:Core/Src/main.c ****         while(1){
-  53              		.loc 1 19 9 view .LVU4
-  20:Core/Src/main.c ****                         SET_BIT(GPIOB->BSRR, GPIO_BSRR_BS7);
-  54              		.loc 1 20 17 view .LVU5
-  20:Core/Src/main.c ****                         SET_BIT(GPIOB->BSRR, GPIO_BSRR_BS7);
-  55              		.loc 1 20 20 is_stmt 0 view .LVU6
-  56 0016 064B     		ldr	r3, .L6+4
-  57 0018 1B69     		ldr	r3, [r3, #16]
-  20:Core/Src/main.c ****                         SET_BIT(GPIOB->BSRR, GPIO_BSRR_BS7);
-  58              		.loc 1 20 19 view .LVU7
-  59 001a 13F4005F 		tst	r3, #8192
-  60 001e F5D0     		beq	.L3
-  21:Core/Src/main.c ****                 }else{
-  61              		.loc 1 21 25 is_stmt 1 view .LVU8
-  62 0020 024A     		ldr	r2, .L6
-  63 0022 9369     		ldr	r3, [r2, #24]
-  64 0024 43F08003 		orr	r3, r3, #128
-  65 0028 9361     		str	r3, [r2, #24]
-  66 002a F4E7     		b	.L2
-  67              	.L7:
-  68              		.align	2
-  69              	.L6:
-  70 002c 00040240 		.word	1073873920
-  71 0030 00080240 		.word	1073874944
-  72              		.cfi_endproc
-  73              	.LFE130:
-  75              		.text
-  76              	.Letext0:
-  77              		.file 2 "/usr/arm-none-eabi/include/machine/_default_types.h"
-  78              		.file 3 "/usr/arm-none-eabi/include/sys/_stdint.h"
-  79              		.file 4 "/home/mns94/tpu/dmt/Laboratory_Practice/CMSIS/Devices/stm32f429xx.h"
-  80              		.file 5 "Core/Inc/init.h"
-ARM GAS  /tmp/ccauO9Pg.s 			page 3
+   8:Core/Src/main.c ****         GPIO_Ini_CMSIS();
+  45              		.loc 1 8 9 view .LVU3
+  46 000a FFF7FEFF 		bl	GPIO_Ini_CMSIS
+  47              	.LVL2:
+  48 000e 0CE0     		b	.L2
+  49              	.L3:
+   9:Core/Src/main.c ****         while(1){
+ARM GAS  /tmp/ccGgNVrk.s 			page 2
+
+
+  10:Core/Src/main.c ****                 if(READ_BIT(GPIOC->IDR, GPIO_IDR_IDR_13)!=0){
+  11:Core/Src/main.c ****                         SET_BIT(GPIOB->BSRR, GPIO_BSRR_BS7);
+  12:Core/Src/main.c ****                         SET_BIT(GPIOB->BSRR, GPIO_BSRR_BS14);
+  13:Core/Src/main.c ****                         SET_BIT(GPIOB->BSRR, GPIO_BSRR_BS0);
+  14:Core/Src/main.c ****                 }else{
+  15:Core/Src/main.c ****                         SET_BIT(GPIOB->BSRR, GPIO_BSRR_BR7);
+  50              		.loc 1 15 25 view .LVU4
+  51 0010 0F4B     		ldr	r3, .L6
+  52 0012 9A69     		ldr	r2, [r3, #24]
+  53 0014 42F40002 		orr	r2, r2, #8388608
+  54 0018 9A61     		str	r2, [r3, #24]
+  16:Core/Src/main.c ****                         SET_BIT(GPIOB->BSRR, GPIO_BSRR_BR14);
+  55              		.loc 1 16 25 view .LVU5
+  56 001a 9A69     		ldr	r2, [r3, #24]
+  57 001c 42F08042 		orr	r2, r2, #1073741824
+  58 0020 9A61     		str	r2, [r3, #24]
+  17:Core/Src/main.c ****                         SET_BIT(GPIOB->BSRR, GPIO_BSRR_BR0);
+  59              		.loc 1 17 25 view .LVU6
+  60 0022 9A69     		ldr	r2, [r3, #24]
+  61 0024 42F48032 		orr	r2, r2, #65536
+  62 0028 9A61     		str	r2, [r3, #24]
+  63              	.L2:
+   9:Core/Src/main.c ****         while(1){
+  64              		.loc 1 9 9 view .LVU7
+  10:Core/Src/main.c ****                         SET_BIT(GPIOB->BSRR, GPIO_BSRR_BS7);
+  65              		.loc 1 10 17 view .LVU8
+  10:Core/Src/main.c ****                         SET_BIT(GPIOB->BSRR, GPIO_BSRR_BS7);
+  66              		.loc 1 10 20 is_stmt 0 view .LVU9
+  67 002a 0A4B     		ldr	r3, .L6+4
+  68 002c 1B69     		ldr	r3, [r3, #16]
+  10:Core/Src/main.c ****                         SET_BIT(GPIOB->BSRR, GPIO_BSRR_BS7);
+  69              		.loc 1 10 19 view .LVU10
+  70 002e 13F4005F 		tst	r3, #8192
+  71 0032 EDD0     		beq	.L3
+  11:Core/Src/main.c ****                         SET_BIT(GPIOB->BSRR, GPIO_BSRR_BS14);
+  72              		.loc 1 11 25 is_stmt 1 view .LVU11
+  73 0034 064B     		ldr	r3, .L6
+  74 0036 9A69     		ldr	r2, [r3, #24]
+  75 0038 42F08002 		orr	r2, r2, #128
+  76 003c 9A61     		str	r2, [r3, #24]
+  12:Core/Src/main.c ****                         SET_BIT(GPIOB->BSRR, GPIO_BSRR_BS0);
+  77              		.loc 1 12 25 view .LVU12
+  78 003e 9A69     		ldr	r2, [r3, #24]
+  79 0040 42F48042 		orr	r2, r2, #16384
+  80 0044 9A61     		str	r2, [r3, #24]
+  13:Core/Src/main.c ****                 }else{
+  81              		.loc 1 13 25 view .LVU13
+  82 0046 9A69     		ldr	r2, [r3, #24]
+  83 0048 42F00102 		orr	r2, r2, #1
+  84 004c 9A61     		str	r2, [r3, #24]
+  85 004e ECE7     		b	.L2
+  86              	.L7:
+  87              		.align	2
+  88              	.L6:
+  89 0050 00040240 		.word	1073873920
+  90 0054 00080240 		.word	1073874944
+  91              		.cfi_endproc
+ARM GAS  /tmp/ccGgNVrk.s 			page 3
+
+
+  92              	.LFE130:
+  94              		.text
+  95              	.Letext0:
+  96              		.file 2 "/usr/arm-none-eabi/include/machine/_default_types.h"
+  97              		.file 3 "/usr/arm-none-eabi/include/sys/_stdint.h"
+  98              		.file 4 "/home/mns94/tpu/dmt/Laboratory_Practice/CMSIS/Devices/stm32f429xx.h"
+  99              		.file 5 "Core/Inc/init.h"
+ARM GAS  /tmp/ccGgNVrk.s 			page 4
 
 
 DEFINED SYMBOLS
                             *ABS*:00000000 main.c
-     /tmp/ccauO9Pg.s:21     .text.main:00000000 $t
-     /tmp/ccauO9Pg.s:27     .text.main:00000000 main
-     /tmp/ccauO9Pg.s:70     .text.main:0000002c $d
+     /tmp/ccGgNVrk.s:21     .text.main:00000000 $t
+     /tmp/ccGgNVrk.s:27     .text.main:00000000 main
+     /tmp/ccGgNVrk.s:89     .text.main:00000050 $d
 
 UNDEFINED SYMBOLS
 GPIO_Ini
 GPIO_Ini_Self_Def
+GPIO_Ini_CMSIS

@@ -3,6 +3,9 @@
 
 void GPIO_Ini(void);
 void GPIO_Ini_Self_Def(void);
+void GPIO_Ini_CMSIS(void);
+
+
 //#include <stdint.h>
 
 // #define RCC_GPIO_EN     (*(uint32_t*)(0x40023800UL + 0x30UL))
